@@ -1,0 +1,32 @@
+<%-include("../partials/header")%>
+
+<div class ="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">My Best Campground collection...</h1>
+            <p class="lead">These are some of the best CAMPGROUNDS on the Worlds.</p>
+            <a href="/Campgrounds/new" class="btn btn-primary">Add a new camoground!!!</a>
+        </div>
+    </div>
+    <div class="row" style="display:flex; flex-wrap:  wrap;">
+        <%campgrounds.forEach(function(campground){%>
+            <div class="col-md-3 col col-sm-6">
+                <div class ="thumbnail">
+                    <image src="<%=campground.image%>"></image>
+                </div>
+                <div class="caption">
+                    <h4><%=campground.name%></h4>
+                </div> 
+                <p>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a> 
+                </p>   
+            </div>
+        
+        <%})%>
+    </div>
+    
+</div>
+
+
+
+<%-include("../partials/footer")%>
